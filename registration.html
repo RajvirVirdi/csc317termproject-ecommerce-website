@@ -7,5 +7,49 @@
 </head>
 <body>
     
+        <!-- Navbar -->
+        <div id="navbar"> <!--do we use class or id? i forget-->
+            <nav>
+                <ul>
+                    <li><a href="index.html" >Home</a></li> <!--i would like to replace home with logo-->
+                    <li><a href="login.html" >Login</a></li>
+                    <li><a href="settings.html" >settings</a></li>
+                    <li><a href="checkout.html"> checkout</a></li>
+                    <li><a href="cart.html"> cart</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+        <!-- Main Section -->
+        <div id="main-section" >
+            <div class="form-container">
+                <h2>Register</h2>
+                <form action="/register" method="POST"> <!--again will probably have to be modified-->
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+    
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+    
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+    
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        </div>
+    
+        <!-- Footer -->
+        <div id="footer" >
+            <footer>
+                <p>&copy; 2024 Your Website Name. All Rights Reserved.</p>
+            </footer>
+        </div>
+    
+    
+    
 </body>
 </html>

@@ -3,39 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TimeCraft ⌚</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="scripts.js"></script>
 </head>
 <body>
-    <body>
-        <!-- Navbar -->
-        <div id="navbar"> <!--do we use class or id? i forget-->
-            <nav>
-                <ul>
-                    <li><a href="index.html" >Home</a></li> <!--i would like to replace home with logo-->
-                    <li><a href="login.html" >Login</a></li>
-                    <li><a href="settings.html" >settings</a></li>
-                    <li><a href="checkout.html"> checkout</a></li>
-                    <li><a href="cart.html"> cart</a></li>
-                </ul>
-            </nav>
+    <!-- Navbar -->
+    <header id="navbar">
+        <div class="logo">
+            <a href="index.html">WatchZone</a>
         </div>
-    
-        <!-- Main Section -->
-        <div id="main-section" >
-            <section>
-                <h1>Welcome to the Homepage</h1>
-                <p>This is the main content section where you can add information about your site.</p>
-            </section>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Discover Timeless Elegance</h1>
+            <p>Shop our exclusive collection of premium watches.</p>
+            <button onclick="scrollToSection('featured-products')">Shop Now</button>
         </div>
-    
-        <!-- Footer -->
-        <div id="footer" >
-            <footer>
-                <p>&copy; 2024 Your Website Name. All Rights Reserved.</p>
-            </footer>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="featured-products">
+        <h2>Featured Watches</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="watch1.jpg" alt="Watch 1">
+                <h3>Luxury Watch</h3>
+                <p>$499.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="watch2.jpg" alt="Watch 2">
+                <h3>Elegant Timepiece</h3>
+                <p>$299.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="watch3.jpg" alt="Watch 3">
+                <h3>Classic Design</h3>
+                <p>$199.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
         </div>
-    </body>
-    
-    
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <p>&copy; 2024 WatchZone. All Rights Reserved.</p>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+        </ul>
+    </footer>
 </body>
 </html>

@@ -1,0 +1,71 @@
+.back-btn {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 20px;
+    line-height: 50px;
+    text-transform: uppercase;
+}
+
+body {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    width: 500px;
+}
+
+#MainForm{
+    display: inline-block;
+}
+
+#hourglass-logo {
+    width: 70px;
+}
+
+#email, #pword, #confirm-pword {
+    width: 500px;
+    height: 60px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+#terms-msg {
+    margin-top: 30px;
+}
+
+#terms-msg a {
+    color: black; 
+}
+
+
+#signup-btn {
+    display: block;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 30px;
+    margin: auto;
+    
+}
+
+#signup-btn a {
+    color: white;
+    text-decoration: none; /* Ensure no underline */
+}
+
+#signup-btn:hover {
+    background-color: grey;
+}
+
+.divider{
+    width:5px;
+    height:auto;
+    
+}

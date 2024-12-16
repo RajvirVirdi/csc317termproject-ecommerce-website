@@ -24,12 +24,16 @@
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
 }
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Navbar */
@@ -43,6 +47,7 @@ body {
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    width: 100%;
 }
 
 #navbar .logo img {
@@ -59,6 +64,7 @@ body {
     display: flex;
     margin: 0;
     padding: 0;
+    justify-content: center;
 }
 
 #navbar ul li {
@@ -127,6 +133,9 @@ body {
     position: relative;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .carousel {
@@ -134,6 +143,7 @@ body {
     position: relative;
     width: 100%;
     height: 600px;
+    justify-content: center;
 }
 
 .carousel-item {
@@ -144,6 +154,7 @@ body {
     display: none;
     position: absolute;
     transition: all 0.5s ease;
+    text-align: center;
 }
 
 .carousel-item.active {
@@ -154,19 +165,22 @@ body {
 .carousel-content {
     position: absolute;
     bottom: 80px;
-    left: 80px;
+    left: 50%;
+    transform: translateX(-50%);
     color: #fff;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
     background: rgba(0,0,0,0.4);
     padding: 30px;
     border-radius: 15px;
     backdrop-filter: blur(5px);
+    text-align: center;
 }
 
 .carousel-content h1 {
     font-size: 3rem;
     margin-bottom: 20px;
     color: #f39c12;
+    text-align: center;
 }
 
 .carousel-content .btn {
@@ -195,6 +209,8 @@ body {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    margin: 0 auto;
 }
 
 .product-card:hover {
@@ -209,4 +225,5 @@ body {
     text-align: center;
     padding: 30px;
     box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+    width: 100%;
 }

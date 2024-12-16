@@ -6,16 +6,17 @@ const next = document.querySelector('.next');
 let currentSlide = 0;
 let autoSlideInterval;
 
+// Function to handle slide transitions and animations
 function showSlide(index, direction = 'right') {
     const currentItem = carouselItems[currentSlide];
     const nextItem = carouselItems[index];
     
-    // Remove existing classes
+    // Remove existing animation classes from all slides
     carouselItems.forEach(item => {
         item.classList.remove('active', 'slide-left', 'slide-right');
     });
 
-    // Add animation classes based on direction
+    // Add appropriate animation classes based on slide direction
     if (direction === 'right') {
         currentItem.classList.add('slide-left');
         nextItem.classList.add('slide-right', 'active');
@@ -25,6 +26,7 @@ function showSlide(index, direction = 'right') {
     }
 }
 
+// Start automatic slideshow with 5 second intervals
 function startAutoSlide() {
     autoSlideInterval = setInterval(() => {
         currentSlide = (currentSlide + 1) % carouselItems.length;
@@ -32,10 +34,12 @@ function startAutoSlide() {
     }, 5000); // Change slide every 5 seconds
 }
 
+// Stop automatic slideshow (used when manually changing slides)
 function stopAutoSlide() {
     clearInterval(autoSlideInterval);
 }
 
+// Event handlers for previous/next buttons
 prev.addEventListener('click', () => {
     stopAutoSlide();
     currentSlide = (currentSlide - 1 + carouselItems.length) % carouselItems.length;
@@ -50,12 +54,13 @@ next.addEventListener('click', () => {
     startAutoSlide();
 });
 
-// Start auto-sliding
+// Initialize automatic slideshow
 startAutoSlide();
 
-// Tooltip for Add to Cart with custom notification
+// Add to Cart functionality with animated notification
 document.querySelectorAll('.add-to-cart').forEach(button => {
     button.addEventListener('click', () => {
+        // Create and style notification element
         const notification = document.createElement('div');
         notification.className = 'cart-notification';
         notification.innerHTML = `
@@ -66,7 +71,7 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
         `;
         document.body.appendChild(notification);
         
-        // Animate notification
+        // Handle notification animation timing
         setTimeout(() => notification.classList.add('show'), 100);
         setTimeout(() => {
             notification.classList.remove('show');

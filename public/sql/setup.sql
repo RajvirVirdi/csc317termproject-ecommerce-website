@@ -1,0 +1,13 @@
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL
+);
+
+CREATE TABLE purchases (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
+    item_name TEXT NOT NULL,
+    price REAL NOT NULL,
+    FOREIGN KEY(user_id) REFERENCES users(id)
+);

@@ -3,39 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Your Cart - TimeCraft</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-        <!-- Navbar -->
-        <div id="navbar"> <!--do we use class or id? i forget-->
-            <nav>
-                <ul>
-                    <li><a href="index.html" >Home</a></li> <!--i would like to replace home with logo-->
-                    <li><a href="login.html" >Login</a></li>
-                    <li><a href="settings.html" >settings</a></li>
-                    <li><a href="checkout.html"> checkout</a></li>
-                    <li><a href="cart.html"> cart</a></li>
-                </ul>
-            </nav>
+
+<!-- Navbar -->
+<header id="navbar">
+    <div class="logo">
+        <img src="logo.png" alt="TimeCraft">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="search-box">
+        <input type="text" placeholder="Search watches...">
+        <button>Search</button>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="cart.html" class="active">
+                <img src="cart-icon.png" alt="Cart"> <!-- Cart Icon -->
+                <span id="cart-count">0</span>
+            </a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Cart Page Content -->
+<div id="cart-page">
+    <h1>Your Shopping Cart</h1>
+    <table id="cart-table">
+        <thead>
+            <tr>
+                <th>Photo</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="cart-items">
+            <!-- Cart items will be dynamically inserted here -->
+        </tbody>
+    </table>
+    <div id="cart-total">
+        <p>Total: $<span id="total-price">0.00</span></p>
+        <button id="checkout-button">Proceed to Checkout</button>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="footer-content">
+        <p>&copy; 2024 TimeCraft. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="twitter.png" alt="Twitter"></a>
         </div>
-    
-        <!-- Main Section -->
-        <div id="main-section" >
-            <section>
-                <h1>Welcome to the Homepage</h1>
-                <p>This is the main content section where you can add information about your site.</p>
-            </section>
-        </div>
-    
-        <!-- Footer -->
-        <div id="footer" >
-            <footer>
-                <p>&copy; 2024 Your Website Name. All Rights Reserved.</p>
-            </footer>
-        </div>
-    
-    
-    
+    </div>
+</footer>
+
 </body>
 </html>

@@ -1,52 +1,38 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/signup.css">
+    <title>Login</title>
 </head>
+
 <body>
-    
-        <!-- Navbar -->
-        <div id="navbar"> <!--do we use class or id? i forget-->
-            <nav>
-                <ul>
-                    <li><a href="index.html" >Home</a></li> <!--i would like to replace home with logo-->
-                    <li><a href="login.html" >Login</a></li>
-                    <li><a href="settings.html" >settings</a></li>
-                    <li><a href="checkout.html"> checkout</a></li>
-                    <li><a href="cart.html"> cart</a></li>
-                </ul>
-            </nav>
-        </div>
-    
         <!-- Main Section -->
-        <div id="main-section" >
-            
-                <div class="form-container">
-                    <h2>Login</h2>
-                    <form action="/login" method="POST"> <!--will probably have to be modified for back end-->
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-        
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" required>
-        
-                        <button type="submit">Login</button>
-                    </form>
-                </div>
-            
-        
+        <img id="hourglass-logo" src="/public/images/timeCraftLogo.png" alt="Hourglass Icon">
+        <h2>Enter your email and password to Sign in.</h2>
+        <form id="" action="/signup" method="POST">
+            <input type="email" name="email" id="emailInp" placeholder="Email" required>
+            <input type="password" name="password" id="pwordInp" placeholder="Password" required>
+            <p id="terms-msg">By signing up, I agree to the <a href="#" id="a1">Privacy Policy and Terms of Use.</a></p>
+            <button type="submit" id="signup-btn">Login</button>
+            <a href="signup.html"><button type="button" id="signup-btn">Create User</button></a>
+        </form>
         </div>
     
         <!-- Footer -->
         <div id="footer" >
             <footer>
-                <p>&copy; 2024 Your Website Name. All Rights Reserved.</p>
+                <p>&copy; 2024 TimeCraft. All Rights Reserved.</p>
             </footer>
         </div>
     
-    
-    
+    <nav>
+        <a href="./index.html" class="back-btn">&larr; Back</a>
+    </nav>
 </body>
 </html>

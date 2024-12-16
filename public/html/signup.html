@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/signup.css">
+    <title>Create Account</title>
+</head>
+<body>
+    <nav>
+        <a href="./index.html" class="back-btn">&larr; Back</a>
+    </nav>
+    <img id="hourglass-logo" src="/public/images/hourglassLogo.png" alt="Hourglass Icon">
+    <h2>Create Your Account</h2>
+    <form id="MainForm" action="/signup" method="POST">
+        <input type="email" name="email" id="emailInp" placeholder="Email" required>
+        <input type="password" name="password" id="pwordInp" placeholder="Password" required>
+        <input type="text" name="password" id="fnameInp" placeholder="First Name" required>
+        <input type="text" name="password" id="lnameInp" placeholder="Last Name" required>
+        <p id="terms-msg">By signing up, I agree to the <a href="#" id="a1">Privacy Policy and Terms of Use.</a></p>
+        <button type="submit" id="signup-btn">Sign Up</button>
+        <a href="login.html"><button type="button" id="signup-btn">Login In</button></a>
+    </form>
+
+</body>
+</html>
+

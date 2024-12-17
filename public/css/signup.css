@@ -41,7 +41,7 @@ body {
 }
 
 
-#signup-btn {
+#signup-btn, #login-btn {
     display: block;
     color: white;
     background-color: black;
@@ -55,12 +55,12 @@ body {
     
 }
 
-#signup-btn a {
+#signup-btn a, #login-btn a {
     color: white;
     text-decoration: none; /* Ensure no underline */
 }
 
-#signup-btn:hover {
+#signup-btn:hover, #login-btn:hover {
     background-color: grey;
 }
 

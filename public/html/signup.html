@@ -15,16 +15,54 @@
     </nav>
     <img id="hourglass-logo" src="/public/images/hourglassLogo.png" alt="Hourglass Icon">
     <h2>Create Your Account</h2>
-    <form id="MainForm" action="/signup" method="POST">
+    <form id="signup-form">
+        <input type="text" name="fname" id="fnameInp" placeholder="First Name" required>
+        <input type="text" name="lname" id="lnameInp" placeholder="Last Name" required>
         <input type="email" name="email" id="emailInp" placeholder="Email" required>
         <input type="password" name="password" id="pwordInp" placeholder="Password" required>
-        <input type="text" name="password" id="fnameInp" placeholder="First Name" required>
-        <input type="text" name="password" id="lnameInp" placeholder="Last Name" required>
-        <p id="terms-msg">By signing up, I agree to the <a href="#" id="a1">Privacy Policy and Terms of Use.</a></p>
+        <p id="terms-msg">
+            By signing up, I agree to the 
+            <a href="#" id="a1">Privacy Policy and Terms of Use.</a>
+        </p>
         <button type="submit" id="signup-btn">Sign Up</button>
-        <a href="login.html"><button type="button" id="signup-btn">Login In</button></a>
+        <a href="login.html"><button type="button" id="login-btn">Log In</button></a>
     </form>
 
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', async (e) => {
+            e.preventDefault(); // Prevent default form submission
+
+            // Collect form data
+            const fname = document.getElementById('fnameInp').value;
+            const lname = document.getElementById('lnameInp').value;
+            const email = document.getElementById('emailInp').value;
+            const password = document.getElementById('pwordInp').value;
+
+            try {
+                // Send data to the backend API
+                const response = await fetch('/api/signup', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        username: `${fname} ${lname}`, 
+                        email, 
+                        password 
+                    })
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    alert(result.message);
+                    window.location.href = 'login.html'; // Redirect to login page
+                } else {
+                    alert(result.error); // Show error message
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while creating the account.');
+            }
+        });
+    </script>
 </body>
 </html>
-

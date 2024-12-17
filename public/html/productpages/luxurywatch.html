@@ -4,24 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Page</title>
-    <link rel="stylesheet" href="luxurywatch.css">
+    <link rel="stylesheet" href="../../css/luxurywatch.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <div id="navbar">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">About</a></li>
-        </ul>
-    </div>
+    <!-- Main Navigation -->
+    <header id="navbar">
+        <div class="logo">
+            <img src="../images/timeCraftLogo.png" alt="TimeCraft">
+            <span>TimeCraft</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html" class="active">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="../cart.html" id="cart-icon">
+                    Cart
+                    <span id="cart-count">0</span> <!-- Cart item count -->
+                </a></li>
+                <li><a href="../login.html">Login</a></li>
+                <li><a href="../contact.html">Contact</a></li>  
+            </ul>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="Search watches...">
+            <button>Search</button>
+        </div>
+    </header>
 
     <!-- Main Content -->
     <div class="container">
         <!-- Product Image -->
         <div class="product-image">
-            <img src="https://via.placeholder.com/400" alt="Product Image">
+            <img src="../../images/luxurywatch.png" alt="Product Image">
         </div>
 
         <!-- Product Details -->
@@ -37,9 +51,16 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <div id="footer">
-        &copy; 2024 Your Company. All rights reserved.
-    </div>
+    <!-- Site Footer -->
+    <footer id="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 TimeCraft. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#"><img src="facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="twitter.png" alt="Twitter"></a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

@@ -14,7 +14,7 @@ Welcome to TimeCraft! Our modern e-commerce platform inspired by Amazon's shoppi
     npm install
 
 4. Start server
-    node app2.js (subject to change)
+    node server.js (subject to change)
 
 5. Open browser of choice and visit
     http://localhost:3000            

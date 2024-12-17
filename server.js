@@ -19,12 +19,51 @@ const db = new sqlite3.Database('./private/db/database.db', (err) => {
         console.error('Failed to connect to database:', err.message);
     } else {
         console.log('Connected to SQLite database');
+
+        // Create 'users' table
         db.run(`CREATE TABLE IF NOT EXISTS users (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             username TEXT NOT NULL,
             email TEXT NOT NULL UNIQUE,
             password TEXT NOT NULL
         )`);
+
+        // Create 'products' table
+        db.run(`CREATE TABLE IF NOT EXISTS products (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            description TEXT,
+            price REAL NOT NULL,
+            image_url TEXT NOT NULL
+        )`, (err) => {
+            if (err) {
+                console.error('Error creating products table:', err.message);
+            } else {
+                console.log('Products table created successfully.');
+
+                // Check if 'products' table is empty before inserting sample data
+                db.get('SELECT COUNT(*) AS count FROM products', (err, row) => {
+                    if (err) {
+                        console.error('Error checking products table:', err.message);
+                    } else if (row.count === 0) {
+                        db.run(`INSERT INTO products (name, description, price, image_url) VALUES 
+                            ('Fenmore Multifunction Black Stainless Steel Watch', 'Stylish black stainless steel watch for men.', 299, 'https://fossil.scene7.com/is/image/FossilPartners/BQ2365_main?$sfcc_fos_medium$'),
+                            ('Men''s Gold Contour Case Remote Sweep Leather Watch', 'Elegant gold leather watch for men.', 399, 'https://www.peugeotwatches.com/cdn/shop/products/2039G-FV_2048x.jpg?v=1630521201'),
+                            ('Men''s Patek Philippe Aquanaut Rose Gold', 'Luxury Patek Philippe Aquanaut with rose gold finish.', 899, 'https://content.thewosgroup.com/productimage/17921105/17921105_1.jpg?impolicy=lister'),
+                            ('Mibro Lite Smart Watch', 'Waterproof IP68 smart watch with advanced features.', 199, 'https://s.alicdn.com/@sc04/kf/He5d6cc646f494c82abb2b6b0b229648bR.jpg_720x720q50.jpg')`, 
+                            (err) => {
+                                if (err) {
+                                    console.error('Error inserting products:', err.message);
+                                } else {
+                                    console.log('Sample products inserted successfully.');
+                                }
+                            });
+                    } else {
+                        console.log('Products table already contains data.');
+                    }
+                });
+            }
+        });
     }
 });
 
@@ -79,6 +118,19 @@ app.post('/api/login', (req, res) => {
             console.error('Error:', error.message);
             res.status(500).json({ error: 'Internal Server Error' });
         }
+    });
+});
+
+// Fetch all products
+app.get('/api/products', (req, res) => {
+    const sql = 'SELECT * FROM products';
+
+    db.all(sql, [], (err, rows) => {
+        if (err) {
+            console.error('Error fetching products:', err.message);
+            return res.status(500).json({ error: 'Failed to retrieve products' });
+        }
+        res.status(200).json(rows);
     });
 });
 

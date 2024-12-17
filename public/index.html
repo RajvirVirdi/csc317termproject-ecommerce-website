@@ -4,14 +4,14 @@
     <!-- Meta tags for proper rendering -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> TimeCraft </title>
-    <link rel="stylesheet" href="./html/styles.css">
+    <title>TimeCraft - Home</title>
+    <link rel="stylesheet" href="./html/styles.css"> <!-- Ensure correct CSS path -->
 </head>
 <body>
     <!-- Main Navigation -->
     <header id="navbar">
         <div class="logo">
-            <img src="../images/timeCraftLogo.png" alt="TimeCraft">
+            <img src="/images/timeCraftLogo.png" alt="TimeCraft">
             <span>TimeCraft</span>
         </div>
         <nav>
@@ -22,8 +22,8 @@
                     Cart
                     <span id="cart-count">0</span> <!-- Cart item count -->
                 </a></li>
-                <li><a href=".//html/login.html">Login</a></li>
-                <li><a href="contact.html">Contact</a></li>  
+                <li><a href="./html/login.html">Login</a></li>
+                <li><a href="/html/contact.html">Contact</a></li>  
             </ul>
         </nav>
         <div class="search-box">
@@ -35,25 +35,25 @@
     <!-- Hero Carousel Section -->
     <section id="hero">
         <div class="carousel">
-            <div class="carousel-item active" style="background-image: url('hero1.jpg');">
+            <div class="carousel-item active" style="background-image: url('/images/hero1.jpg');">
                 <div class="carousel-content">
                     <h1>Discover Timeless Elegance</h1>
                     <p>Shop our exclusive collection of luxury watches.</p>
-                    <a href="products.html" class="btn">Shop Now</a>
+                    <a href="/html/product.html" class="btn">Shop Now</a>
                 </div>
             </div>
-            <div class="carousel-item" style="background-image: url('hero2.jpg');">
+            <div class="carousel-item" style="background-image: url('/images/hero2.jpg');">
                 <div class="carousel-content">
                     <h1>Crafted to Perfection</h1>
                     <p>Explore a range of premium timepieces.</p>
-                    <a href="products.html" class="btn">Browse Collection</a>
+                    <a href="/html/product.html" class="btn">Browse Collection</a>
                 </div>
             </div>
-            <div class="carousel-item" style="background-image: url('hero3.jpg');">
+            <div class="carousel-item" style="background-image: url('/images/hero3.jpg');">
                 <div class="carousel-content">
                     <h1>Unmatched Style</h1>
                     <p>Find the perfect watch for every occasion.</p>
-                    <a href="products.html" class="btn">Explore Now</a>
+                    <a href="/html/product.html" class="btn">Explore Now</a>
                 </div>
             </div>
         </div>
@@ -63,35 +63,11 @@
         </div>
     </section>
     
-    <!-- Featured Products Display -->
+    <!-- Featured Products Section -->
     <section id="featured-products">
         <h2>Featured Products</h2>
         <div class="product-grid">
-            <!-- Product Cards -->
-            <div class="product-card">
-                <img src="../images/fossilanalog.webp" alt="Luxury Watch 1">
-                <h3>Fenmore Multifunction Black Stainless Steel Watch</h3>
-                <p>$299</p>
-                <button class="btn add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="../images/pugquartz.jpg" alt="Luxury Watch 2">
-                <h3>Men's Gold Contour Case Remote Sweep Leather watch</h3>
-                <p>$399</p>
-                <button class="btn add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="../images/patekphillepe.jpg" alt="Luxury Watch 3">
-                <h3>Men's Patek Philippe Aquanaut Rose Gold</h3>
-                <p>$899</p>
-                <button class="btn add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="../images/roundsmartwatch.jpg" alt="Luxury Watch 4">
-                <h3>Mibro lite XPAW004 Reloj Watches IP68</h3>
-                <p>$199</p>
-                <button class="btn add-to-cart">Add to Cart</button>
-            </div>
+            <!-- Products will be dynamically loaded here -->
         </div>
     </section>
 
@@ -100,13 +76,14 @@
         <div class="footer-content">
             <p>&copy; 2024 TimeCraft. All Rights Reserved.</p>
             <div class="social-links">
-                <a href="#"><img src="facebook.png" alt="Facebook"></a>
-                <a href="#"><img src="instagram.png" alt="Instagram"></a>
-                <a href="#"><img src="twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="/images/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="/images/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="/images/twitter.png" alt="Twitter"></a>
             </div>
         </div>
     </footer>
 
-    <script src="app.js"></script>
+    <!-- JavaScript -->
+    <script src="/app.js"></script> <!-- Ensure app.js is loaded -->
 </body>
 </html>

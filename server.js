@@ -50,7 +50,10 @@ const db = new sqlite3.Database('./private/db/database.db', (err) => {
                             ('Fenmore Multifunction Black Stainless Steel Watch', 'Stylish black stainless steel watch for men.', 299, 'https://fossil.scene7.com/is/image/FossilPartners/BQ2365_main?$sfcc_fos_medium$'),
                             ('Men''s Gold Contour Case Remote Sweep Leather Watch', 'Elegant gold leather watch for men.', 399, 'https://www.peugeotwatches.com/cdn/shop/products/2039G-FV_2048x.jpg?v=1630521201'),
                             ('Men''s Patek Philippe Aquanaut Rose Gold', 'Luxury Patek Philippe Aquanaut with rose gold finish.', 899, 'https://content.thewosgroup.com/productimage/17921105/17921105_1.jpg?impolicy=lister'),
-                            ('Mibro Lite Smart Watch', 'Waterproof IP68 smart watch with advanced features.', 199, 'https://s.alicdn.com/@sc04/kf/He5d6cc646f494c82abb2b6b0b229648bR.jpg_720x720q50.jpg')`, 
+                            ('Mibro Lite Smart Watch', 'Waterproof IP68 smart watch with advanced features.', 199, 'https://s.alicdn.com/@sc04/kf/He5d6cc646f494c82abb2b6b0b229648bR.jpg_720x720q50.jpg'),
+                            'Luxury Watch', 'A premium luxury watch with elegant design.', 899, '../images/luxurywatch.png'),
+                            ('Smart Watch', 'A modern smart watch with advanced features.', 899, '../images/smartwatch.png')`,
+                            
                             (err) => {
                                 if (err) {
                                     console.error('Error inserting products:', err.message);

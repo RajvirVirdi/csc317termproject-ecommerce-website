@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const response = await fetch('/api/products');
         const products = await response.json();
 
-        products.forEach(product => {
+        products.slice(0, 4).forEach(product => {
             const productCard = `
                 <div class="product-card">
                     <img src="${product.image_url}" alt="${product.name}">
@@ -94,8 +94,12 @@ document.addEventListener('DOMContentLoaded', async () => {
             `;
             productContainer.innerHTML += productCard;
         });
+        
     } catch (error) {
         console.error('Error fetching products:', error);
         productContainer.innerHTML = '<p>Failed to load products.</p>';
     }
 });
+
+
+

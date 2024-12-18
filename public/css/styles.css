@@ -118,6 +118,8 @@ body {
     padding: 17px 33px;
 }
 
+
+
 /* search box styles */
 .search-box {
     display: flex;
@@ -156,6 +158,7 @@ body {
     font-size: 1.5rem;
     margin-left: -10px;
 }
+
 
 .search-box button:hover {
     background: #e67e22;

@@ -1,47 +1,148 @@
-/* Cart Page Styling */
-#cart-page {
-    margin: 20px;
-    padding: 20px;
+/* IMPORTS AND FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+/* Logo styling with custom font */
+.logo span {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.8rem;
+    font-weight: 700;
+    color: #000000; /* Black text color */
+    text-transform: none;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-#cart-items {
-    margin-bottom: 20px;
+/* Root CSS Variables */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #e74c3c;
+    --accent-color: #3498db;
+    --text-color: #2c3e50;
+    --background-color: #ecf0f1;
+    --hover-color: #e67e22;
 }
 
-#cart-items .cart-item {
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000000;
     display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid #ccc;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
-#cart-total {
+/* Navbar Styles */
+#navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
+    background: linear-gradient(to right, #ffffff, #e6e6e6);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
 }
 
-#checkout-button {
-    background-color: #3498db;
-    color: white;
-    padding: 10px 20px;
+/* Navbar logo */
+#navbar .logo img {
+    width: 150px;
+    transition: transform 0.3s;
+}
+
+#navbar .logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Navbar Menu */
+#navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar ul li {
+    margin: 0 20px;
+}
+
+#navbar ul li a {
+    text-decoration: none;
+    color: #000000; /* Black text color */
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-size: 1.8rem;
+}
+
+#navbar ul li a:hover,
+#navbar ul li a.active {
+    color: #fff;
+    background-color: var(--hover-color);
+    box-shadow: 0 0 15px rgba(243, 156, 18, 0.5);
+    padding: 17px 33px;
+}
+
+/* Search Box */
+.search-box {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    border-radius: 25px;
+}
+
+.search-box input {
+    padding: 8px 15px;
     border: none;
-    border-radius: 5px;
+    background: transparent;
+    color: #000000;
+    border-radius: 20px;
+    width: 200px;
+    transition: all 0.3s;
+    font-size: 1.1rem;
+}
+
+.search-box input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.5);
+    width: 250px;
+}
+
+.search-box button {
+    padding: 12px 25px;
+    border: none;
+    background: var(--hover-color);
+    color: #fff;
+    border-radius: 25px;
     cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-left: -10px;
 }
 
-#checkout-button:hover {
-    background-color: #2980b9;
+.search-box button:hover {
+    background: #e67e22;
+    transform: translateX(3px);
+    box-shadow: 0 0 15px rgba(243, 156, 18, 0.5);
+    padding: 14px 28px;
 }
 
+/* Cart Page Styling */
 #cart-page {
     margin: 20px auto;
     max-width: 800px;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     border-radius: 10px;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
 }
 
 #cart-table {
@@ -50,7 +151,8 @@
     margin-bottom: 20px;
 }
 
-#cart-table th, #cart-table td {
+#cart-table th,
+#cart-table td {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
@@ -66,7 +168,7 @@
 }
 
 .remove-item {
-    background-color: red;
+    background-color: #e74c3c;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -75,99 +177,52 @@
 }
 
 .remove-item:hover {
-    background-color: darkred;
+    background-color: #c0392b;
 }
 
-/* Additional styles for cart items */
-.listCart .item {
+/* Cart Total Section */
+#cart-total {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    margin: 10px 0;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
+    align-items: center;
+    margin-top: 20px;
 }
 
-.listCart .item img {
-    max-width: 50px;
-    max-height: 50px;
-    object-fit: cover;
-}
-
-.listCart .item span {
-    margin: 0 10px;
-    flex: 1;
-}
-
-.listCart .item .remove-item {
-    background-color: #ff4d4d;
+#checkout-button {
+    background-color: var(--hover-color);
     color: white;
+    padding: 10px 20px;
     border: none;
-    padding: 5px 10px;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease;
 }
 
-/* New Cart Layout - Table Styling */
-#cart-items-container {
-    margin-bottom: 30px;
+#checkout-button:hover {
+    background-color: #d35400;
 }
 
-.cart-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 15px;
-}
-
-.cart-item img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-.cart-item-details {
-    flex: 1;
-    margin-left: 20px;
-}
-
-.cart-item-name {
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.cart-item-price {
-    font-size: 14px;
-    color: #555;
-}
-
-.cart-item-quantity {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 120px;
-}
-
-.cart-item-quantity input {
-    width: 50px;
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+/* Footer */
+#footer {
+    background: linear-gradient(to right, #1a1a1a, #333);
+    color: #fff;
     text-align: center;
+    padding: 30px;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-top: auto;
 }
 
-.cart-item-quantity button {
-    background-color: #f44336;
-    color: white;
-    padding: 5px;
-    border-radius: 5px;
-    cursor: pointer;
+/* Social Icons */
+#footer .social-links a {
+    color: #3b5998;
 }
 
-.cart-item-quantity button:hover {
-    background-color: #d32f2f;
+#footer .social-links a[href*="instagram"] {
+    color: #e4405f;
+}
+
+#footer .social-links a[href*="twitter"] {
+    color: #1da1f2;
 }
